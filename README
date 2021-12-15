@@ -1,21 +1,35 @@
-To enable the tests, be sure to run:
-composer install
+#
 
-And after that, check if the version is 8.5.0 with the command:
+## Before start
+This code was made using PHP 8, but should be compatible up to PHP 5.4
+
+## Tests
+To enable the tests, be sure to run:
+```
+composer install
+```
+
+And after that, check if the version is 9.0.0 with the command:
+```
 ./vendor/bin/phpunit --version
+```
 
 In case it's not 9.0.0 or higher, probably due another application that overrides that option, as xampp for instance.
 Since it's not a default issue, you need to check your environment to find which application is overridden the version set into composer.json.
 
 To run the tests, the following command is recommended:
+```
 ./vendor/bin/phpunit --testdox --do-not-cache-result tests
+```
 
-
-To run the webserver, follow that steps:
-cd src/REST
+## Running the API
+First you need to run the webserver from the source directory, follow that steps:
+```
+cd src
 php -S localhost:8080 public/index.php
+```
 
-Now you can use the API in your localhost at port 8080.
-
-To run End To End tests:
-
+Now you can use the API in your browser at port 8080
+```
+http://localhost:8080/
+```
